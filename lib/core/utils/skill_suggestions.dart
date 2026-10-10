@@ -1,0 +1,28 @@
+class SkillSuggestions {
+  static const List<String> healthcareSkills = [
+    'Personal Hygiene',
+    'Wound Dressing',
+    'Injections',
+    'IV Cannulation',
+    'Vital Monitoring',
+    'Feeding Tube Care',
+    'Catheter Care',
+    'Physiotherapy',
+    'Baby Massage',
+    'Post-delivery Care',
+    'Elderly Care',
+    'Dementia Care',
+    'Medicine Management',
+    'Sample Collection',
+    'ECG Monitoring',
+    'CPR & First Aid',
+    'Tracheostomy Care',
+    'Suctioning',
+    'Diabetic Care',
+    'Bed Bathing',
+    'Range of Motion Exercises',
+    'End-of-life Care',
+    'Nebulization',
+    'Oxygen Therapy',
+  ];
+}

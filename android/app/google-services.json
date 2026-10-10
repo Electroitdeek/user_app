@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "123456789012",
+    "project_id": "adhisaat-dev-local",
+    "storage_bucket": "adhisaat-dev-local.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123456789012:android:aaaaaaaaaaaaaaaa",
+        "android_client_info": {
+          "package_name": "com.adhisaat.app.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDummyKeyForLocalDebugBuild000001"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123456789012:android:bbbbbbbbbbbbbbbb",
+        "android_client_info": {
+          "package_name": "com.adhisaat.provider.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDummyKeyForLocalDebugBuild000001"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

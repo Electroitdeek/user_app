@@ -1,0 +1,75 @@
+# import_path = File.expand_path(File.join('..', '..', 'flutter', 'packages', 'flutter_tools', 'bin', 'xcode_backend.dart'))
+# load File.join(File.dirname(import_path), 'podhelper.rb')
+
+# Uncomment the next line to define a global platform for your project
+platform :ios, '15.5'
+
+
+
+def flutter_root
+  generated_xcode_build_settings_path = File.expand_path(File.join('..', 'Flutter', 'Generated.xcconfig'), __FILE__)
+  unless File.exist?(generated_xcode_build_settings_path)
+    raise "#{generated_xcode_build_settings_path} must exist. If you're running pod install manually, make sure flutter pub get is executed first"
+  end
+
+  File.foreach(generated_xcode_build_settings_path) do |line|
+    matches = line.match(/FLUTTER_ROOT\=(.*)/)
+    return matches[1].strip if matches
+  end
+  raise "FLUTTER_ROOT not found in #{generated_xcode_build_settings_path}. Try deleting Generated.xcconfig, then run flutter pub get"
+end
+
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
+
+flutter_ios_podfile_setup
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Debug-dev' => :debug,
+  'Debug-prod' => :debug,
+  'Debug-user_dev' => :debug,
+  'Debug-user_prod' => :debug,
+  'Debug-provider_dev' => :debug,
+  'Debug-provider_prod' => :debug,
+  'Profile' => :release,
+  'Release-dev' => :release,
+  'Release-prod' => :release,
+  'Release-user_dev' => :release,
+  'Release-user_prod' => :release,
+  'Release-provider_dev' => :release,
+  'Release-provider_prod' => :release,
+}
+
+
+target 'Runner' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  use_modular_headers!
+
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+    target.build_configurations.each do |config|
+      # Fixes the 'Minimum Deployment Target' warning
+      config.build_settings['DEFINES_MODULE'] = 'YES'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.5'
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'NO'
+      
+      # permission_handler configuration
+      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
+        '$(inherited)',
+        # Keep only foreground location permission; disable Always location.
+        'PERMISSION_LOCATION=0',
+        'PERMISSION_LOCATION_WHENINUSE=1',
+        'PERMISSION_STORAGE=1',
+        'PERMISSION_CAMERA=1',
+        'PERMISSION_PHOTOS=1',
+        'PERMISSION_CONTACTS=1',
+        'PERMISSION_NOTIFICATIONS=1'
+      ]
+    end
+  end
+end

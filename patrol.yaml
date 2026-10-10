@@ -1,0 +1,7 @@
+app_name: Adhisaat
+
+android:
+  package_name: com.adhisaat.app.dev
+
+ios:
+  bundle_id: com.adhisaat.app.dev

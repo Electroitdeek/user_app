@@ -1,0 +1,8 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.release-user_prod.xcconfig"
+#include "Generated.xcconfig"
+FLUTTER_TARGET=lib/main_user_prod.dart
+#include? "../../.env"
+GOOGLE_MAPS_API_KEY = $(GOOGLE_MAPS_API_KEY_IOS)
+FACEBOOK_APP_ID = $(FACEBOOK_APP_ID_USER)
+FACEBOOK_CLIENT_TOKEN = $(FACEBOOK_CLIENT_TOKEN_USER)
+FACEBOOK_URL_SCHEME = com.adhisaat

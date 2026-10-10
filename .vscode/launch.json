@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "User Dev",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_user_dev.dart",
+            "args": [
+                "--flavor",
+                "user_dev"
+            ]
+        },
+        {
+            "name": "User Prod",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_user_prod.dart",
+            "args": [
+                "--flavor",
+                "user_prod"
+            ]
+        },
+        {
+            "name": "Provider Dev",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_provider_dev.dart",
+            "args": [
+                "--flavor",
+                "provider_dev"
+            ]
+        },
+        {
+            "name": "Provider Prod",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_provider_prod.dart",
+            "args": [
+                "--flavor",
+                "provider_prod"
+            ]
+        }
+    ]
+}

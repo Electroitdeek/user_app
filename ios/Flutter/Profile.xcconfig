@@ -1,0 +1,5 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"
+#include "Generated.xcconfig"
+// Maps API key - define directly to ensure it's available in Info.plist
+#include? "../../.env"
+GOOGLE_MAPS_API_KEY = $(GOOGLE_MAPS_API_KEY_IOS)

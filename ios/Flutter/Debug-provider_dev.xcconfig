@@ -1,0 +1,8 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug-provider_dev.xcconfig"
+#include "Generated.xcconfig"
+FLUTTER_TARGET=lib/main_provider_dev.dart
+#include? "../../.env"
+GOOGLE_MAPS_API_KEY = $(GOOGLE_MAPS_API_KEY_IOS)
+FACEBOOK_APP_ID =
+FACEBOOK_CLIENT_TOKEN =
+FACEBOOK_URL_SCHEME = com.adhisaat.provider.dev

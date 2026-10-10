@@ -1,0 +1,26 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "BQURKWYBK5.com.adhisaat.app",
+          "BQURKWYBK5.com.adhisaat.app.dev"
+        ],
+        "components": [
+          { "/": "/booking/*" },
+          { "/": "/refer*" }
+        ]
+      },
+      {
+        "appIDs": [
+          "BQURKWYBK5.com.adhisaat.provider",
+          "BQURKWYBK5.com.adhisaat.provider.dev"
+        ],
+        "components": [
+          { "/": "/provider-booking/*" },
+          { "/": "/refer*" }
+        ]
+      }
+    ]
+  }
+}
